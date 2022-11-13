@@ -48,7 +48,7 @@ app.post('/register',async(req,res)=>
            })
  
            const Registerd = await userRegister.save()
-           res.status(201).render('login')
+           res.status(201).res.sendFile(path.resolve(__dirname,'views','login.html'))
 
 
         } else {
