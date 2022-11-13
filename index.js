@@ -17,6 +17,8 @@ app.set('view engine','hbs')
 const static_path = path.join(__dirname,'public')
 app.use(express.static(static_path))
 
+
+
 //setting port for listening
 const port = process.env.port || 3000
 app.listen(port)
@@ -24,7 +26,7 @@ app.listen(port)
 //getting element on the site
 app.get('/',(req,res)=>
 {
-    res.render('index')
+    res.sendFile(path.resolve(__dirname,'views','index.html'))
 })
 
 
